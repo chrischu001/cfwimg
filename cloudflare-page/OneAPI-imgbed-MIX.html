@@ -46,9 +46,122 @@
         .copy-button {
             width: auto;
         }
+        .fixed-top {
+            position: unset;
+            top: 0;
+            right: 0;
+            left: 0;
+        }
+        .bg-dark {
+            --bs-bg-opacity: 1;
+            background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
+        }
+        .fixed-top {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            z-index: 1030;
+        }
+        .navbar-dark {
+            --bs-navbar-color: rgba(255, 255, 255, 0.55);
+            --bs-navbar-hover-color: rgba(255, 255, 255, 0.75);
+            --bs-navbar-disabled-color: rgba(255, 255, 255, 0.25);
+            --bs-navbar-active-color: #fff;
+            --bs-navbar-brand-color: #fff;
+            --bs-navbar-brand-hover-color: #fff;
+            --bs-navbar-toggler-border-color: rgba(255, 255, 255, 0.1);
+            --bs-navbar-toggler-icon-bg: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e);
+        }
+        .navbar {
+            --bs-navbar-padding-x: 0;
+            --bs-navbar-padding-y: 0.5rem;
+            --bs-navbar-color: rgba(0, 0, 0, 0.55);
+            --bs-navbar-hover-color: rgba(0, 0, 0, 0.7);
+            --bs-navbar-disabled-color: rgba(0, 0, 0, 0.3);
+            --bs-navbar-active-color: rgba(0, 0, 0, 0.9);
+            --bs-navbar-brand-padding-y: 0.3125rem;
+            --bs-navbar-brand-margin-end: 1rem;
+            --bs-navbar-brand-font-size: 1.25rem;
+            --bs-navbar-brand-color: rgba(0, 0, 0, 0.9);
+            --bs-navbar-brand-hover-color: rgba(0, 0, 0, 0.9);
+            --bs-navbar-nav-link-padding-x: 0.5rem;
+            --bs-navbar-toggler-padding-y: 0.25rem;
+            --bs-navbar-toggler-padding-x: 0.75rem;
+            --bs-navbar-toggler-font-size: 1.25rem;
+            --bs-navbar-toggler-icon-bg: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e);
+            --bs-navbar-toggler-border-color: rgba(0, 0, 0, 0.1);
+            --bs-navbar-toggler-border-radius: 0.375rem;
+            --bs-navbar-toggler-focus-width: 0.25rem;
+            --bs-navbar-toggler-transition: box-shadow 0.15s ease-in-out;
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--bs-navbar-padding-y) var(--bs-navbar-padding-x);
+        }
+        .navcontainer {
+            display: flex;
+            flex-wrap: inherit;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .navbar-toggler {
+        padding: var(--bs-navbar-toggler-padding-y) var(--bs-navbar-toggler-padding-x);
+        font-size: var(--bs-navbar-toggler-font-size);
+        line-height: 1;
+        color: var(--bs-navbar-color);
+        background-color: transparent;
+        border: var(--bs-border-width) solid var(--bs-navbar-toggler-border-color);
+        border-radius: var(--bs-navbar-toggler-border-radius);
+        transition: var(--bs-navbar-toggler-transition);
+        }
+        .navbar-collapse {
+        flex-basis: 100%;
+        flex-grow: 1;
+        align-items: center;
+        }
+        .navbar-expand-md .navbar-nav {
+                flex-direction: row;
+            }
+        }
+        .mb-lg-0 {
+                margin-bottom: 0 !important;
+            }
+        }
+        .mb-2 {
+            margin-bottom: .5rem !important;
+        }
     </style>
 </head>
 <body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+		<a href="/" class="mdui-typo-headline" style="margin: 0 20px;">
+		<img style="width: 160px;" src="https://picgo.us.kg/img/logo.png" title="">
+		</a>
+        <div class="navcontainer">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://picgo.us.kg/">Telegram-Image</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://avps.eu.org/">Telegraph-Image</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://nierss.eu.org/about">About</a>
+                    </li>  
+				</ul>
+			</div>
+        </div>
+    </nav>
     <div class="container">
         <h2>File Upload</h2>
         <form id="upload-form">
